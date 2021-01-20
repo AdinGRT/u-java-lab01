@@ -5,29 +5,23 @@ package com.gm.mundopc;
  * @author adingrt
  */
 public class Monitor {
-    private int idMonitor;
+    private final int idMonitor;
     private String marca;
     private double tamanio;
-    private int contadorMonitores;
+    private static int contadorMonitores;
 
-    public Monitor() {
+    private Monitor() {
+        this.idMonitor = ++Monitor.contadorMonitores;
     }
 
     public Monitor(String marca, double tamanio) {
+        this();
         this.marca = marca;
         this.tamanio = tamanio;
     }
 
-    public int getIdMonitor() {
-        return idMonitor;
-    }
-
-    public void setIdMonitor(int idMonitor) {
-        this.idMonitor = idMonitor;
-    }
-
     public String getMarca() {
-        return marca;
+        return this.marca;
     }
 
     public void setMarca(String marca) {
@@ -35,24 +29,20 @@ public class Monitor {
     }
 
     public double getTamanio() {
-        return tamanio;
+        return this.tamanio;
     }
 
     public void setTamanio(double tamanio) {
         this.tamanio = tamanio;
     }
 
-    public int getContadorMonitores() {
-        return contadorMonitores;
+    public int getIdMonitor() {
+        return this.idMonitor;
     }
-
-    public void setContadorMonitores(int contadorMonitores) {
-        this.contadorMonitores = contadorMonitores;
-    }
-
+    
     @Override
     public String toString() {
-        return "Monitor{" + "idMonitor=" + idMonitor + ", marca=" + marca + ", tamanio=" + tamanio + ", contadorMonitores=" + contadorMonitores + '}';
+        return "Monitor{" + "idMonitor=" + idMonitor + ", marca=" + marca + ", tamanio=" + tamanio + '}';
     }
     
     

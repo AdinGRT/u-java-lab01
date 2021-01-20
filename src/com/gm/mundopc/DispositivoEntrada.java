@@ -7,17 +7,14 @@ package com.gm.mundopc;
 public class DispositivoEntrada {
     private String tipoEntrada;
     private String marca;
-    
-    public DispositivoEntrada(){
-    }
-    
+        
     public DispositivoEntrada(String tipoEntrada, String marca) {
         this.tipoEntrada = tipoEntrada;
         this.marca = marca;
     }
 
     public String getMarca() {
-        return marca;
+        return this.marca;
     }
 
     public void setMarca(String marca) {
@@ -25,13 +22,16 @@ public class DispositivoEntrada {
     }
 
     public String getTipoEntrada() {
-        return tipoEntrada;
+        return this.tipoEntrada;
     }
 
     public void setTipoEntrada(String tipoEntrada) {
         this.tipoEntrada = tipoEntrada;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "DispositivoEntrada{" + "tipoEntrada=" + tipoEntrada + ", marca=" + marca + '}';
+    }
     
 }
